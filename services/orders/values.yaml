@@ -1,0 +1,17 @@
+fullnameOverride: orders
+
+image:
+  repository: public.ecr.aws/aws-containers/retail-store-sample-orders
+  tag: ""
+
+app:
+  persistence:
+    provider: postgres
+  messaging:
+    provider: rabbitmq
+
+postgresql:
+  create: true
+
+rabbitmq:
+  create: true

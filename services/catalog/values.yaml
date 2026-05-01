@@ -1,0 +1,12 @@
+fullnameOverride: catalog
+
+image:
+  repository: public.ecr.aws/aws-containers/retail-store-sample-catalog
+  tag: ""
+
+app:
+  persistence:
+    provider: mysql
+
+mysql:
+  create: true

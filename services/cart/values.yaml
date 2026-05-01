@@ -1,0 +1,12 @@
+fullnameOverride: carts
+
+image:
+  repository: public.ecr.aws/aws-containers/retail-store-sample-cart
+  tag: ""
+
+app:
+  persistence:
+    provider: dynamodb
+
+dynamodb:
+  create: true

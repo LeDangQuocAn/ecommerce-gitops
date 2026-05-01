@@ -1,0 +1,14 @@
+fullnameOverride: checkout
+
+image:
+  repository: public.ecr.aws/aws-containers/retail-store-sample-checkout
+  tag: ""
+
+app:
+  persistence:
+    provider: redis
+  endpoints:
+    orders: http://orders:80
+
+redis:
+  create: true
