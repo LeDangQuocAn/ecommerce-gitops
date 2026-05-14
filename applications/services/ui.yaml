@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ui
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://github.com/LeDangQuocAn/aws-eks-ecommerce-devops.git
+      targetRevision: main
+      path: src/ui/chart
+      helm:
+        valueFiles:
+          - $values/services/ui/values.yaml
+    - repoURL: https://github.com/LeDangQuocAn/ecommerce-gitops.git
+      targetRevision: main
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
