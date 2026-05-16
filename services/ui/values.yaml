@@ -1,9 +1,7 @@
 fullnameOverride: ui
-
 image:
   repository: public.ecr.aws/aws-containers/retail-store-sample-ui
-  tag: ""
-
+  tag: "f62ebab08201e4be4b91511b64ce46850a159e41"
 app:
   endpoints:
     catalog: http://catalog:80
