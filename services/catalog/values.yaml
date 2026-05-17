@@ -5,5 +5,12 @@ image:
 app:
   persistence:
     provider: mysql
+    endpoint: "catalog-mysql:3306"
+    secret:
+      password: "123456789"
+
 mysql:
   create: true
+  persistentVolume:
+    enabled: true
+    storageClass: "gp2"
