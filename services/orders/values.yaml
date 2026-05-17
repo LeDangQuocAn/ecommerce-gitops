@@ -5,6 +5,8 @@ image:
 app:
   persistence:
     provider: postgres
+    secret:
+      password: OrdersPassword2026
   messaging:
     provider: rabbitmq
 postgresql:
