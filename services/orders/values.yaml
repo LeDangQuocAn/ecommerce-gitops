@@ -11,5 +11,9 @@ app:
     provider: rabbitmq
 postgresql:
   create: true
+  persistentVolume:
+    enabled: true
+    storageClass: gp2
+    size: 8Gi
 rabbitmq:
   create: true
