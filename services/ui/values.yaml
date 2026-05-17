@@ -8,3 +8,16 @@ app:
     carts: http://carts:80
     checkout: http://checkout:80
     orders: http://orders:80
+
+ingress:
+  enabled: true
+  className: "alb"
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: /actuator/health/liveness
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: Prefix
